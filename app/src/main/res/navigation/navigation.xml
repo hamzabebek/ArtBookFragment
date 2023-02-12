@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/artList">
+
+    <fragment
+        android:id="@+id/artList"
+        android:name="com.example.artbookfragment.artbooknavigation.view.ArtList"
+        android:label="fragment_art_list"
+        tools:layout="@layout/fragment_art_list" >
+        <action
+            android:id="@+id/action_artList_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.artbookfragment.artbooknavigation.view.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_artList"
+            app:destination="@id/artList" />
+        <argument
+            android:name="info"
+            app:argType="string"
+            android:defaultValue="new" />
+        <argument
+            android:name="selectedId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
